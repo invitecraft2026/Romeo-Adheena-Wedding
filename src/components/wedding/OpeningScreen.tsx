@@ -64,7 +64,7 @@ const OpeningScreen = ({ onEnter }: OpeningScreenProps) => {
           transition={{ delay: 1.5 }}
           className="mt-8 text-muted-foreground/50 text-xs tracking-widest"
         >
-          ✦ 15 . 08 . 2025 ✦
+          ✦ 30 . 05 . 2026 ✦
         </motion.p>
       </motion.div>
     </motion.div>

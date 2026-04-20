@@ -50,22 +50,23 @@ const Countdown = () => {
           May 30, 2026 • 3:00 PM
         </h2>
 
-        <div className="flex justify-center gap-3 md:gap-6">
-          {units.map((u) => (
-            <div
-              key={u.label}
-              className="glass rounded-xl p-4 md:p-6 min-w-[70px] md:min-w-[90px] border-gold/20"
-            >
-              <span className="font-serif text-3xl md:text-5xl font-bold text-gold block">
-                {String(u.value).padStart(2, "0")}
-              </span>
+        <div className="grid grid-cols-4 gap-2 sm:gap-3 md:flex md:justify-center md:gap-6 px-2">
+  {units.map((u) => (
+    <div
+      key={u.label}
+      className="glass rounded-xl p-2 sm:p-3 md:p-6 border-gold/20 text-center 
+                 md:w-28 lg:w-32"
+    >
+      <span className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gold block leading-none">
+        {String(u.value).padStart(2, "0")}
+      </span>
 
-              <span className="text-muted-foreground text-xs tracking-[0.15em] uppercase mt-1 block">
-                {u.label}
-              </span>
-            </div>
-          ))}
-        </div>
+      <span className="text-muted-foreground text-[10px] sm:text-xs tracking-[0.15em] uppercase mt-1 block">
+        {u.label}
+      </span>
+    </div>
+  ))}
+</div>
       </motion.div>
     </section>
   );

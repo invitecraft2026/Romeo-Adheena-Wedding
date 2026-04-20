@@ -21,10 +21,12 @@ const Location = () => (
         {/* ✅ Updated Map Embed */}
         <iframe
           title="Wedding venue location"
-          src="https://www.google.com/maps?q=Roman+Catholic+Basilica+of+Our+Lady+of+Snow&output=embed"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.3365459909783!2d76.1827642!3d10.167563999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b081a21965ac783%3A0x26fa89a460ca667d!2sRoman%20Catholic%20Basilica%20of%20Our%20Lady%20of%20Snow!5e1!3m2!1sen!2sin!4v1776666821439!5m2!1sen!2sin"
           className="w-full h-64 md:h-80 border-0"
           loading="lazy"
         />
+
+        {/* <iframe src= width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
 
         <div className="p-6 text-center">
           <div className="flex items-center justify-center gap-2 mb-3">
