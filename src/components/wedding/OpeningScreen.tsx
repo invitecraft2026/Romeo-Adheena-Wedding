@@ -40,7 +40,7 @@ const OpeningScreen = ({ onEnter }: OpeningScreenProps) => {
           You are invited to
         </p>
         <h1 className="font-script text-5xl md:text-7xl text-gold mb-2 text-shadow-gold">
-          David & Anna
+          Romeo & Adheena
         </h1>
         <p className="font-serif text-lg text-muted-foreground tracking-widest mb-12">
           Wedding Celebration

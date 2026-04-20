@@ -28,9 +28,9 @@ const HeroSection = () => {
         transition={{ duration: 0.8, delay: 0.5 }}
         className="text-center mt-8 z-10"
       >
-        <h2 className="font-script text-5xl md:text-7xl text-gold text-shadow-gold">David</h2>
+        <h2 className="font-script text-5xl md:text-7xl text-gold text-shadow-gold">Romeo</h2>
         <p className="font-script text-3xl md:text-4xl text-gold/70 my-2">&</p>
-        <h2 className="font-script text-5xl md:text-7xl text-gold text-shadow-gold">Anna</h2>
+        <h2 className="font-script text-5xl md:text-7xl text-gold text-shadow-gold">Adheena</h2>
       </motion.div>
 
       <motion.p

@@ -16,7 +16,6 @@ const ScratchCard = () => {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    // Gold gradient
     const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
     gradient.addColorStop(0, "#C9A84C");
     gradient.addColorStop(0.5, "#E8D48B");
@@ -24,7 +23,6 @@ const ScratchCard = () => {
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    // Text
     ctx.fillStyle = "#A08030";
     ctx.font = "bold 16px 'Cormorant Garamond', serif";
     ctx.textAlign = "center";
@@ -40,17 +38,18 @@ const ScratchCard = () => {
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
+
     ctx.globalCompositeOperation = "destination-out";
     ctx.beginPath();
     ctx.arc(x, y, 25, 0, Math.PI * 2);
     ctx.fill();
 
-    // Check percentage scratched
     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     let transparent = 0;
     for (let i = 3; i < imageData.data.length; i += 4) {
       if (imageData.data[i] === 0) transparent++;
     }
+
     if (transparent / (imageData.data.length / 4) > 0.5) {
       setIsRevealed(true);
     }
@@ -60,14 +59,23 @@ const ScratchCard = () => {
     const canvas = canvasRef.current;
     if (!canvas) return { x: 0, y: 0 };
     const rect = canvas.getBoundingClientRect();
+
     if ("touches" in e) {
-      return { x: e.touches[0].clientX - rect.left, y: e.touches[0].clientY - rect.top };
+      return {
+        x: e.touches[0].clientX - rect.left,
+        y: e.touches[0].clientY - rect.top,
+      };
     }
-    return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+
+    return {
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    };
   };
 
   const handleStart = () => setIsScratching(true);
   const handleEnd = () => setIsScratching(false);
+
   const handleMove = (e: React.MouseEvent | React.TouchEvent) => {
     if (!isScratching) return;
     e.preventDefault();
@@ -91,17 +99,26 @@ const ScratchCard = () => {
           ref={containerRef}
           className="relative w-full h-48 rounded-xl overflow-hidden border-2 border-gold glow-gold"
         >
-          {/* Content underneath */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-champagne">
+          {/* 🎉 Updated Content */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-champagne px-4">
             <p className="font-serif text-sm tracking-[0.2em] uppercase text-muted-foreground mb-1">
-              Wedding Date
+              Marriage
             </p>
-            <h3 className="font-script text-3xl text-gold mb-2">15 August 2025</h3>
-            <p className="font-serif text-foreground">St. Mary's Church</p>
-            <p className="font-serif text-muted-foreground text-sm mt-1">Reception at 6 PM</p>
+
+            <h3 className="font-script text-3xl text-gold mb-2">
+              30 May 2026
+            </h3>
+
+            <p className="font-serif text-foreground text-center">
+              Roman Catholic Basilica of Our Lady of Snow
+            </p>
+
+            <p className="font-serif text-muted-foreground text-sm mt-1">
+              3:00 PM
+            </p>
           </div>
 
-          {/* Scratch canvas */}
+          {/* Scratch Canvas */}
           <canvas
             ref={canvasRef}
             className={`absolute inset-0 w-full h-full cursor-pointer transition-opacity duration-500 ${

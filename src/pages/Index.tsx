@@ -10,6 +10,7 @@ import Location from "@/components/wedding/Location";
 import MusicPlayer from "@/components/wedding/MusicPlayer";
 import FloatingPetals from "@/components/wedding/FloatingPetals";
 import Footer from "@/components/wedding/Footer";
+import DressCode from "@/components/wedding/DressCode";
 
 const Index = () => {
   const [entered, setEntered] = useState(false);
@@ -36,6 +37,7 @@ const Index = () => {
           <ScratchCard />
           <Countdown />
           <WeddingDetails />
+          <DressCode/>
           <Gallery />
           <Location />
           <Footer />

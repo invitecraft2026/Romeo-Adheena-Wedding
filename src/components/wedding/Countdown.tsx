@@ -2,29 +2,10 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const Countdown = () => {
+  // ✅ Fixed wedding date (IST)
+  const targetDate = new Date("2026-05-30T15:00:00");
 
-  // create random future time
-  const generateRandomDate = () => {
-    const now = new Date();
-
-    const randomDays = Math.floor(Math.random() * 30) + 1; // 1–30 days
-    const randomHours = Math.floor(Math.random() * 24);
-    const randomMinutes = Math.floor(Math.random() * 60);
-    const randomSeconds = Math.floor(Math.random() * 60);
-
-    const future = new Date(now);
-    future.setDate(now.getDate() + randomDays);
-    future.setHours(now.getHours() + randomHours);
-    future.setMinutes(now.getMinutes() + randomMinutes);
-    future.setSeconds(now.getSeconds() + randomSeconds);
-
-    return future;
-  };
-
-  const [targetDate] = useState(generateRandomDate());
-  const [time, setTime] = useState(getTimeLeft());
-
-  function getTimeLeft() {
+  const getTimeLeft = () => {
     const diff = Math.max(0, targetDate.getTime() - Date.now());
 
     return {
@@ -33,7 +14,9 @@ const Countdown = () => {
       minutes: Math.floor((diff / (1000 * 60)) % 60),
       seconds: Math.floor((diff / 1000) % 60),
     };
-  }
+  };
+
+  const [time, setTime] = useState(getTimeLeft());
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -58,9 +41,14 @@ const Countdown = () => {
         viewport={{ once: true }}
         className="text-center"
       >
-        <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-8">
+        <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-2">
           Counting Down To
         </p>
+
+        {/* ✅ Show date */}
+        <h2 className="font-serif text-xl md:text-2xl mb-6 text-gold">
+          May 30, 2026 • 3:00 PM
+        </h2>
 
         <div className="flex justify-center gap-3 md:gap-6">
           {units.map((u) => (
