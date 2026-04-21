@@ -38,7 +38,7 @@ const Index = () => {
           <Countdown />
           <WeddingDetails />
           <DressCode/>
-          <Gallery />
+          {/* <Gallery /> */}
           <Location />
           <Footer />
         </motion.div>
