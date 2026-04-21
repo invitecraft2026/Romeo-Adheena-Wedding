@@ -68,7 +68,7 @@ export default {
       },
       fontFamily: {
         serif: ['Cormorant Garamond', 'Playfair Display', 'Georgia', 'serif'],
-        script: ['Great Vibes', 'cursive'],
+        script: ['Alex Brush', 'cursive'],
       },
       borderRadius: {
         lg: "var(--radius)",
