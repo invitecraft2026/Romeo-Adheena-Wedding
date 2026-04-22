@@ -9,7 +9,7 @@ const MusicPlayer = ({ autoPlay = false }: MusicPlayerProps) => {
   const [playing, setPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
 
-  const musicUrl = "/i wanna be your.mpeg";
+  const musicUrl = "/A thousend years.mpeg";
 
   useEffect(() => {
     if (audioRef.current) {
